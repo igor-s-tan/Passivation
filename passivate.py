@@ -167,7 +167,6 @@ def add_atoms(structure: list,
     return structure
 
 
-# Пишет структуры в разные форматы
 def write_structure(structures: list,
                     lattices: list) -> None:
     out = open(infile[:len(infile) - len(intype) - 1] + '_passivated.' + outtype, 'w', encoding='utf-8')
