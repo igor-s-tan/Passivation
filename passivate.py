@@ -15,11 +15,11 @@ parser.add_argument('-ta', '--atom_type', help='Added atom type', default='H')
 
 args = parser.parse_args()
 
-isDeleted = args.delete
-if isDeleted == 'true':
-    isDeleted = True
+is_deleted = args.delete
+if is_deleted == 'true':
+    is_deleted = True
 else:
-    isDeleted = False
+    is_deleted = False
 
 infile = args.infile
 outtype = args.output_type
@@ -118,7 +118,7 @@ def is_in_array(component: None,
 def add_atoms(structure: list,
               size: int) -> list:
     to_remove = [1]
-    if isDeleted:
+    if is_deleted:
         while len(to_remove) != 0:
             to_remove = []
             for i in range(size):
