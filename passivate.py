@@ -11,7 +11,6 @@ parser.add_argument('-o', '--output_type', help='Type of the output file (cfg, x
 parser.add_argument('-i', '--input_type', help='Type of the input file (cfg)', default='cfg')
 
 parser.add_argument('-d', '--delete', help='Delete single atoms', action='store_true')
-parser.set_defaults(delete=False)
 
 parser.add_argument('-l', '--length_a', help='Added atom bond length (angstrom)', type=float, default='1.1')
 
