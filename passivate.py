@@ -55,6 +55,10 @@ cutoff_dictionary = {(1, 1): DEFAULT,
                      (14, 14): 2.57}
 
 
+def print_error(*args, **kwargs):
+    print(*args, file=sys.stderr, **kwargs)
+    
+    
 def read_cfg(structures: list,
              lattices: list,
              sizes: list,
@@ -165,11 +169,6 @@ input_formats = {'cfg': read_cfg}
 output_formats = {'cfg': write_cfg,
                   'xyz': write_xyz,
                   'poscar': write_poscar}
-
-
-def print_error(*args, **kwargs):
-    print(*args, file=sys.stderr, **kwargs)
-
 
 def get_linear_place(r_atom: np.ndarray,
                      r_c: np.ndarray,
