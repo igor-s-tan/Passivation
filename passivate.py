@@ -108,10 +108,10 @@ def write_xyz(structures: list,
         xyz = f'{len(structures[i])}\n' + \
               f'FRAME: {i} Lattice="{("{:10.5f} " * 9).format(*lattices[i][0], *lattices[i][1], *lattices[i][2])}"\n'
 
-        structures[i].sort(key=lambda x: x[0])
+        structures[i].sort(key=lambda x: x[1])
 
         for atom in structures[i]:
-            xyz += f'{atoms_dictionary[atom[1]]} {("{:10.5f} " * 3).format(*atom[2])}\n'
+            xyz += f'{atoms_dictionary[atom[1]].ljust(2, " ")} {("{:10.5f} " * 3).format(*atom[2])}\n'
 
         out.write(xyz)
 
@@ -130,7 +130,7 @@ def write_poscar(structures: list,
                           [0.0, 20.0, 0.0], \
                           [0.0, 0.0, 20.0]
 
-        structures[i].sort(key=lambda x: x[0])
+        structures[i].sort(key=lambda x: x[1])
 
         count = [[structures[i][0][1], 1]]
         it = 0
